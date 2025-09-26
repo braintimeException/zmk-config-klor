@@ -176,7 +176,7 @@ label= "NAVIG"                                                 ;
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
               &trans    &trans    &trans    &trans    &trans                         &trans    &kp HOME  &trans    &kp END   &kp PG_UP     
     &kp RA(A) &trans    &kp RA(S) &trans    &trans    &kp LBKT                       &kp RBKT  &kp LEFT  &kp UP    &kp RIGHT &kp PG_DN &trans  
-    &trans    &trans    &trans    &trans    &trans    &kp FSLSH &trans     &trans    &kp BSLSH &trans    &kp DOWN  &trans    &trans    &trans
+    &trans    &trans    &trans    &trans    &trans    &kp FSLH  &trans     &trans    &kp BSLH  &trans    &kp DOWN  &trans    &trans    &trans
                                   &mo ADJUST &trans   &kp TAB   &trans     &trans    &trans    &trans    &trans  
                         >;
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
