@@ -93,7 +93,7 @@
               key-positions = <23 24 25>;
               bindings = <&kp LS(LCTRL)>;
             };
-            combo_rshift {
+            combo_rshift_ctl {
               timeout-ms = <50>;
               key-positions = <30 31 32>;
               bindings = <&kp RS(RCTL)>;
