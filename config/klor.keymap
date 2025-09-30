@@ -194,19 +194,19 @@ label= "FNUM"                                                  ;
 label= "NAVIG"                                                 ;
 // └───────────────────────────────────────────────────────────┘
 /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │         │         │         │         │         │                    │         │   HOME  │    Ü    │  END    │  PG UP  │
+             │         │         │         │         │         │                    │         │   HOME  │   UP    │  END    │  PG UP  │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │         │         │         │         │         │    [    │                    │    ]    │   LEFT  │   UP    │  RIGHT  │ PG DOWN │         │
+   │         │         │         │         │         │    [    │                    │    ]    │   LEFT  │  DOWN   │  RIGHT  │ PG DOWN │         │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │         │         │         │         │         │    /    ││        ││        ││    \    │         │  DOWN   │         │         │         │
+   │         │         │         │         │         │    /    ││        ││        ││    \    │         │         │         │         │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │ ADJUST  │         │   TAB   │         ││         │  INSERT │         │         │  
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &trans    &trans    &trans    &trans    &kp ESC                        &kp GRAVE &kp HOME  &trans    &kp END   &kp PG_UP     
-    &kp RA(A) &trans    &kp RA(S) &trans    &trans    &kp LBKT                       &kp RBKT  &kp LEFT  &kp UP    &kp RIGHT &kp PG_DN &trans  
-    &trans    &trans    &trans    &trans    &trans    &kp FSLH  &trans     &trans    &kp BSLH  &trans    &kp DOWN  &trans    &trans    &trans
+              &trans    &trans    &trans    &trans    &kp ESC                        &kp GRAVE &kp HOME  &kp UP    &kp END   &kp PG_UP     
+    &kp RA(A) &trans    &kp RA(S) &trans    &trans    &kp LBKT                       &kp RBKT  &kp LEFT  &kp DOWN  &kp RIGHT &kp PG_DN &trans  
+    &trans    &trans    &trans    &trans    &trans    &kp FSLH  &trans     &trans    &kp BSLH  &trans    &trans    &trans    &trans    &trans
                                   &trans    &kp TAB   &trans    &mo ADJUST &trans    &kp INSERT &trans    &trans  
                         >;
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
