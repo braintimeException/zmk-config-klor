@@ -59,22 +59,22 @@
             /*     bindings = <&kp ESC>; */
             /* }; */
             combo_lshift {
-              timeout-ms = <50>;
+              timeout-ms = <70>;
               key-positions = <23 24>;
               bindings = <&kp LSHFT>;
             };
             combo_rshift {
-              timeout-ms = <50>;
+              timeout-ms = <70>;
               key-positions = <33 34>;
               bindings = <&kp RSHFT>;
             };
             combo_lcontrol {
-              timeout-ms = <50>;
+              timeout-ms = <70>;
               key-positions = <24 25>;
               bindings = <&kp LCTRL>;
             };
             combo_rcontrol {
-              timeout-ms = <50>;
+              timeout-ms = <70>;
               key-positions = <32 33>;
               bindings = <&kp RCTRL>;
             };
@@ -148,14 +148,14 @@ label= "PRORAK"                                                ;
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     │   XXX   │    "    │    Q    │    J    │    K    │    X    ││  MUTE  ││PLY/PSE ││    B    │    M    │    W    │    V    │    Z    │   XXX   │
     └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                  │  LGUI   │  FNUM   │  SPACE  │   ALT   ││  ENTER  │  BSPCE  │  NAVIG  │  RGUI   │  
+                                  │  LGUI   │  SPACE  │  FNUM   │   ALT   ││  ENTER  │  NAVIG  │  BSPCE  │  RGUI   │  
                                   └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //|          ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               &kp SEMI  &kp COMMA &kp DOT   &kp P     &kp Y                          &kp F     &kp G     &kp C     &kp R     &kp L
     &trans    &kp A     &kp O     &kp E     &kp U     &kp I                          &kp D     &kp H     &kp T     &kp N     &kp S      &trans
     &trans    &kp SQT   &kp Q     &kp J     &kp K     &kp X     &trans     &trans    &kp B     &kp M     &kp W     &kp V     &kp Z      &trans
-                                            &kp LGUI  &mo FNUM  &kp SPACE &kp LALT   &kp RET   &kp BSPC  &mo NAVIG &kp RGUI    
+                                            &kp LGUI  &kp SPACE &mo FNUM  &kp LALT   &kp RET   &mo NAVIG &kp BSPC &kp RGUI    
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
@@ -174,14 +174,14 @@ label= "FNUM"                                                  ;
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     │         │   F9    │   F10   │   F11   │   F12   │    /    ││        ││        ││    \    │    1    │    2    │    3    │    -    │         │
     └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                  │         │         │         │         ││         │  DELETE │         │         │  
+                                  │         │         │         │         ││         │         │ DELETE  │         │  
                                   └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //|          ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               &kp F1    &kp F2    &kp F3    &kp F4    &kp ESC                        &kp GRAVE &kp N7    &kp N8    &kp N9    &kp N0
     &trans    &kp F5    &kp F6    &kp F7    &kp F8    &kp LBKT                       &kp RBKT  &kp N4    &kp N5    &kp N6    &kp EQUAL &trans
     &trans    &kp F9    &kp F10   &kp F11   &kp F12   &kp FSLH  &trans     &trans    &kp BSLH  &kp N1    &kp N2    &kp N3    &kp MINUS &trans
-                                  &trans    &trans    &trans    &trans     &trans    &kp DELETE &trans    &trans
+                                  &trans    &trans    &trans    &trans     &trans    &trans &kp DELETE    &trans
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
@@ -207,7 +207,7 @@ label= "NAVIG"                                                 ;
               &trans    &trans    &trans    &trans    &kp ESC                        &kp GRAVE &kp HOME  &trans    &kp END   &kp PG_UP     
     &kp RA(A) &trans    &kp RA(S) &trans    &trans    &kp LBKT                       &kp RBKT  &kp LEFT  &kp UP    &kp RIGHT &kp PG_DN &trans  
     &trans    &trans    &trans    &trans    &trans    &kp FSLH  &trans     &trans    &kp BSLH  &trans    &kp DOWN  &trans    &trans    &trans
-                                  &trans    &trans    &kp TAB   &mo ADJUST &trans    &kp INSERT &trans    &trans  
+                                  &trans    &kp TAB   &trans    &mo ADJUST &trans    &kp INSERT &trans    &trans  
                         >;
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
