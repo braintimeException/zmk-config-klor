@@ -276,7 +276,7 @@ label= "GAMING"                                                 ;
  //|          ╷         ╷         ╷         ╷          ╷         ╷          ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               &kp V     &kp Q     &kp T     &kp E      &kp G                           &kp Y     &kp U     &kp I     &kp O     &kp P 
     &trans    &kp LSHFT &kp A     &kp W     &kp D      &kp R                           &kp H     &kp J     &kp K     &kp L     &kp SEMI  &trans 
-    &trans    &kp Z     &kp C     &kp S     &kp X      &kp F     &trans     &trans     &kp N     &kp M     &kp ,     &kp .     &kp FSLH  &trans 
+    &trans    &kp Z     &kp C     &kp S     &kp X      &kp F     &trans     &trans     &kp N     &kp M     &kp COMMA &kp DOT    &kp FSLH  &trans 
                                             &mo GRAISE &kp SPACE &mo GLOWER &kp LCTRL  &kp RET   &mo NAVIG &kp BSPC &kp RGUI
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -301,8 +301,8 @@ label= "GRAISE"                                                 ;
  bindings = <
  //|          ╷         ╷         ╷         ╷          ╷         ╷          ╷╷         ╷         ╷          ╷         ╷         ╷         ╷
               &kp Y     &kp U     &kp I     &kp O      &kp P                           &kp Y     &kp U      &kp I     &kp O     &kp P
-    &trans    &kp H     &kp J     &kp K     &kp L      &kp ;                           &kp H     &kp J      &kp K     &kp L     &kp SEMI  &trans
-    &trans    &kp N     &kp M     &kp ,     &kp .      &kp /     &trans     &trans     &kp N     &kp M      &kp ,     &kp .     &kp FSLH  &trans
+    &trans    &kp H     &kp J     &kp K     &kp L      &kp SEMI                        &kp H     &kp J      &kp K     &kp L     &kp SEMI  &trans
+    &trans    &kp N     &kp M     &kp COMMA &kp DOT    &kp FSLH  &trans     &trans     &kp N     &kp M      &kp COMMA &kp DOT   &kp FSLH  &trans
                                             &mo GRAISE &kp SPACE &mo GLOWER &kp LCTRL  &kp RET   &mo ADJUST &kp BSPC &kp RGUI
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -328,7 +328,7 @@ label= "GLOWER"                                                 ;
  //|          ╷         ╷         ╷         ╷          ╷         ╷          ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               &kp F1    &kp F2    &kp F3    &kp F4     &kp ESC                         &kp Y     &kp U     &kp I     &kp O     &kp P
     &trans    &kp F5    &kp F6    &kp F7    &kp F8     &kp TAB                         &kp H     &kp J     &kp K     &kp L     &kp SEMI  &trans
-    &trans    &kp N     &kp M     &kp LALT  &kp LGUI   &kp B     &trans     &trans     &kp N     &kp M     &kp ,     &kp .     &kp FSLH  &trans
+    &trans    &kp N     &kp M     &kp LALT  &kp LGUI   &kp B     &trans     &trans     &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &trans
                                             &mo GRAISE &kp SPACE &mo GLOWER &kp LCTRL  &kp RET   &mo NAVIG &kp BSPC &kp RGUI
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
