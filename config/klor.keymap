@@ -66,85 +66,85 @@
               timeout-ms = <70>;
               key-positions = <23 24>;
               bindings = <&kp LSHFT>;
-              layers = <PRORAK FNUM NAVIG>;
+              layers = <0 1 2>;
             };
             combo_rshift {
               timeout-ms = <70>;
               key-positions = <33 34>;
               bindings = <&kp RSHFT>;
-              layers = <PRORAK NAVIG>;
+              /* layers = <PRORAK NAVIG>; */
             };
             combo_lcontrol {
               timeout-ms = <70>;
               key-positions = <24 25>;
               bindings = <&kp LCTRL>;
-              layers = <PRORAK FNUM NAVIG>;
+              /* layers = <PRORAK FNUM NAVIG>; */
             };
             combo_rcontrol {
               timeout-ms = <70>;
               key-positions = <32 33>;
               bindings = <&kp RCTRL>;
-              layers = <PRORAK NAVIG>;
+              /* layers = <PRORAK NAVIG>; */
             };
             combo_lalt {
               timeout-ms = <50>;
               key-positions = <25 26>;
               bindings = <&kp LALT>;
-              layers = <PRORAK FNUM NAVIG>;
+              /* layers = <PRORAK FNUM NAVIG>; */
             };
             combo_ralt {
               timeout-ms = <50>;
               key-positions = <31 32>;
               bindings = <&kp RALT>;
-              layers = <PRORAK NAVIG>;
+              /* layers = <PRORAK NAVIG>; */
             };
             combo_lshift_lctl {
               timeout-ms = <50>;
               key-positions = <23 24 25>;
               bindings = <&kp LS(LCTRL)>;
-              layers = <PRORAK FNUM NAVIG>;
+              /* layers = <PRORAK FNUM NAVIG>; */
             };
             combo_rshift_rctl {
               timeout-ms = <50>;
               key-positions = <32 33 34>;
               bindings = <&kp RS(RCTL)>;
-              layers = <PRORAK NAVIG>;
+              /* layers = <PRORAK NAVIG>; */
             };
             combo_lshift_lalt {
               timeout-ms = <50>;
               key-positions = <23 24 26>;
               bindings = <&kp LS(LALT)>;
-              layers = <PRORAK FNUM NAVIG>;
+              /* layers = <PRORAK FNUM NAVIG>; */
             };
             combo_rshift_ralt {
               timeout-ms = <50>;
               key-positions = <31 33 34>;
               bindings = <&kp RS(RALT)>;
-              layers = <PRORAK NAVIG>;
+              /* layers = <PRORAK NAVIG>; */
             };
             combo_lctl_lalt {
               timeout-ms = <50>;
               key-positions = <24 25 26>;
               bindings = <&kp LC(LALT)>;
-              layers = <PRORAK FNUM NAVIG>;
+              /* layers = <PRORAK FNUM NAVIG>; */
             };
             combo_rctl_ralt {
               timeout-ms = <50>;
               key-positions = <31 32 33>;
               bindings = <&kp RC(RALT)>;
-              layers = <PRORAK NAVIG>;
+              /* layers = <PRORAK NAVIG>; */
             };
             combo_lshift_lctl_lalt {
               timeout-ms = <50>;
               key-positions = <23 24 25 26>;
               bindings = <&kp LS(LC(LALT))>;
-              layers = <PRORAK FNUM NAVIG>;
+              /* layers = <PRORAK FNUM NAVIG>; */
             };
             combo_rshift_rctl_ralt {
               timeout-ms = <50>;
               key-positions = <31 32 33 34>;
               bindings = <&kp RS(RC(RALT))>;
-              layers = <PRORAK NAVIG>;
+              /* layers = <PRORAK NAVIG>; */
             };
     };
 
@@ -274,9 +274,9 @@ label= "GAMING"                                                 ;
                                   └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
  bindings = <
  //|          ╷         ╷         ╷         ╷          ╷         ╷          ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &kp V     &kp Q     &kp T     &kp E      &kp G                           &kp Y     &kp U     &kp I     &kp O     &kp P
-    &trans    &kp LSHFT &kp A     &kp W     &kp D      &kp R                           &kp H     &kp J     &kp K     &kp L     &kp SEMI  &trans
-    &trans    &kp Z     &kp C     &kp S     &kp X      &kp F     &trans     &trans     &kp N     &kp M     &kp ,     &kp .     &kp FSLH  &trans
+              &kp V     &kp Q     &kp T     &kp E      &kp G                           &kp Y     &kp U     &kp I     &kp O     &kp P 
+    &trans    &kp LSHFT &kp A     &kp W     &kp D      &kp R                           &kp H     &kp J     &kp K     &kp L     &kp SEMI  &trans 
+    &trans    &kp Z     &kp C     &kp S     &kp X      &kp F     &trans     &trans     &kp N     &kp M     &kp ,     &kp .     &kp FSLH  &trans 
                                             &mo GRAISE &kp SPACE &mo GLOWER &kp LCTRL  &kp RET   &mo NAVIG &kp BSPC &kp RGUI
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
