@@ -62,76 +62,89 @@
             /*     key-positions = <0 1>; */
             /*     bindings = <&kp ESC>; */
             /* }; */
-            combo-disabled-layers = <GAMING GRAISE GLOWER>;
             combo_lshift {
               timeout-ms = <70>;
               key-positions = <23 24>;
               bindings = <&kp LSHFT>;
+              layers = <PRORAK FNUM NAVIG>;
             };
             combo_rshift {
               timeout-ms = <70>;
               key-positions = <33 34>;
               bindings = <&kp RSHFT>;
+              layers = <PRORAK NAVIG>;
             };
             combo_lcontrol {
               timeout-ms = <70>;
               key-positions = <24 25>;
               bindings = <&kp LCTRL>;
+              layers = <PRORAK FNUM NAVIG>;
             };
             combo_rcontrol {
               timeout-ms = <70>;
               key-positions = <32 33>;
               bindings = <&kp RCTRL>;
+              layers = <PRORAK NAVIG>;
             };
             combo_lalt {
               timeout-ms = <50>;
               key-positions = <25 26>;
               bindings = <&kp LALT>;
+              layers = <PRORAK FNUM NAVIG>;
             };
             combo_ralt {
               timeout-ms = <50>;
               key-positions = <31 32>;
               bindings = <&kp RALT>;
+              layers = <PRORAK NAVIG>;
             };
             combo_lshift_lctl {
               timeout-ms = <50>;
               key-positions = <23 24 25>;
               bindings = <&kp LS(LCTRL)>;
+              layers = <PRORAK FNUM NAVIG>;
             };
-            combo_rshift_lctl {
+            combo_rshift_rctl {
               timeout-ms = <50>;
               key-positions = <32 33 34>;
               bindings = <&kp RS(RCTL)>;
+              layers = <PRORAK NAVIG>;
             };
             combo_lshift_lalt {
               timeout-ms = <50>;
               key-positions = <23 24 26>;
               bindings = <&kp LS(LALT)>;
+              layers = <PRORAK FNUM NAVIG>;
             };
-            combo_rshift_lalt {
+            combo_rshift_ralt {
               timeout-ms = <50>;
               key-positions = <31 33 34>;
               bindings = <&kp RS(RALT)>;
+              layers = <PRORAK NAVIG>;
             };
             combo_lctl_lalt {
               timeout-ms = <50>;
               key-positions = <24 25 26>;
               bindings = <&kp LC(LALT)>;
+              layers = <PRORAK FNUM NAVIG>;
             };
-            combo_rctl_lalt {
+            combo_rctl_ralt {
               timeout-ms = <50>;
               key-positions = <31 32 33>;
               bindings = <&kp RC(RALT)>;
+              layers = <PRORAK NAVIG>;
             };
             combo_lshift_lctl_lalt {
               timeout-ms = <50>;
               key-positions = <23 24 25 26>;
               bindings = <&kp LS(LC(LALT))>;
+              layers = <PRORAK FNUM NAVIG>;
             };
-            combo_rshift_rctl_lalt {
+            combo_rshift_rctl_ralt {
               timeout-ms = <50>;
               key-positions = <31 32 33 34>;
-              bindings = <&kp LS(RC(RALT))>;
+              bindings = <&kp RS(RC(RALT))>;
+              layers = <PRORAK NAVIG>;
             };
     };
 
