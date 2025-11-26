@@ -72,19 +72,19 @@
               timeout-ms = <70>;
               key-positions = <33 34>;
               bindings = <&kp RSHFT>;
-              /* layers = <PRORAK NAVIG>; */
+              layers = <PRORAK NAVIG>;
             };
             combo_lcontrol {
               timeout-ms = <70>;
               key-positions = <24 25>;
               bindings = <&kp LCTRL>;
-              /* layers = <PRORAK FNUM NAVIG>; */
+              layers = <PRORAK FNUM NAVIG>;
             };
             combo_rcontrol {
               timeout-ms = <70>;
               key-positions = <32 33>;
               bindings = <&kp RCTRL>;
-              /* layers = <PRORAK NAVIG>; */
+              layers = <PRORAK NAVIG>;
             };
             combo_lalt {
               timeout-ms = <50>;
