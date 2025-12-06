@@ -240,17 +240,17 @@ label= "GAMING"                                                 ;
 /*            ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
               │    V    │    Q    │    T    │    E    │    G    │                    │    Y    │    U    │    I    │    O    │    P    │   
     ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-    │   XXX   │  LSHFT  │    A    │    W    │    D    │    R    │                    │    H    │    J    │    K    │    L    │    ;    │   XXX   │
+    │   TAB   │  LSHFT  │    A    │    W    │    D    │    R    │                    │    H    │    J    │    K    │    L    │    ;    │   XXX   │
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-    │   XXX   │    Z    │    C    │    S    │    X    │    F    ││  MUTE  ││PLY/PSE ││    N    │    M    │    ,    │    .    │    /    │   XXX   │
+    │    B    │    Z    │    C    │    S    │    X    │    F    ││  MUTE  ││PLY/PSE ││    N    │    M    │    ,    │    .    │    /    │   XXX   │
     └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                   │  GRAISE │  SPACE  │  GLOWER │  LCTRL  ││  ENTER  │  NAVIG  │  BSPCE  │  RGUI   │
                                   └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
  bindings = <
  //|          ╷         ╷         ╷         ╷          ╷         ╷          ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               &kp V     &kp Q     &kp T     &kp E      &kp G                           &kp Y     &kp U     &kp I     &kp O     &kp P 
-    &trans    &kp LSHFT &kp A     &kp W     &kp D      &kp R                           &kp H     &kp J     &kp K     &kp L     &kp SEMI  &trans 
-    &trans    &kp Z     &kp C     &kp S     &kp X      &kp F     &trans     &trans     &kp N     &kp M     &kp COMMA &kp DOT    &kp FSLH  &trans 
+    &kp TAB   &kp LSHFT &kp A     &kp W     &kp D      &kp R                           &kp H     &kp J     &kp K     &kp L     &kp SEMI  &trans 
+    &kp B     &kp Z     &kp C     &kp S     &kp X      &kp F     &trans     &trans     &kp N     &kp M     &kp COMMA &kp DOT    &kp FSLH  &trans 
                                             &mo GRAISE &kp SPACE &mo GLOWER &kp LCTRL  &kp RET   &mo NAVIG &kp BSPC &kp RGUI
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -292,17 +292,17 @@ label= "GLOWER"                                                 ;
 /*            ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
               │    F1   │    F2   │    F3   │    F4   │   ESC   │                    │    Y    │    U    │    I    │    O    │    P    │   
     ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-    │   XXX   │    F5   │    F6   │    F7   │    F8   │   TAB   │                    │    H    │    J    │    K    │    L    │    ;    │   XXX   │
+    │   ESC   │    F5   │    F6   │    F7   │    F8   │   TAB   │                    │    H    │    J    │    K    │    L    │    ;    │   XXX   │
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-    │   XXX   │         │    M    │   LALT  │  LGUI   │    B    ││  MUTE  ││PLY/PSE ││    N    │    M    │    ,    │    .    │    /    │   XXX   │
+    │   XXX   │    N    │    M    │   LALT  │  LGUI   │    I    ││  MUTE  ││PLY/PSE ││    N    │    M    │    ,    │    .    │    /    │   XXX   │
     └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                   │  GRAISE │  SPACE  │  GLOWER │  LCTRL  ││  ENTER  │  NAVIG  │  BSPCE  │  RGUI   │
                                   └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
  bindings = <
  //|          ╷         ╷         ╷         ╷          ╷         ╷          ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               &kp F1    &kp F2    &kp F3    &kp F4     &kp ESC                         &kp Y     &kp U     &kp I     &kp O     &kp P
-    &trans    &kp F5    &kp F6    &kp F7    &kp F8     &kp TAB                         &kp H     &kp J     &kp K     &kp L     &kp SEMI  &trans
-    &trans    &kp N     &kp M     &kp LALT  &kp LGUI   &kp B     &trans     &trans     &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &trans
+    &kp ESC   &kp F5    &kp F6    &kp F7    &kp F8     &kp TAB                         &kp H     &kp J     &kp K     &kp L     &kp SEMI  &trans
+    &trans    &kp N     &kp M     &kp LALT  &kp LGUI   &kp I     &trans     &trans     &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &trans
                                             &mo GRAISE &kp SPACE &mo GLOWER &kp LCTRL  &kp RET   &mo NAVIG &kp BSPC &kp RGUI
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
