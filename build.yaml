@@ -14,8 +14,8 @@
 
 include:
   - board: nice_nano_v2
-    shield: klor_left
+    shield: klor_left yubitsume
   - board: nice_nano_v2
-    shield: klor_right
+    shield: klor_right yubitsume
 # - board: nice_nano_v2
 #    shield: settings_reset
