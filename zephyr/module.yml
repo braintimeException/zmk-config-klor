@@ -1,4 +1,2 @@
-name: klor_module
 build:
-  board_root: .
-  shield_root: .
+  cmake: .
