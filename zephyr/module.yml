@@ -1,4 +1,4 @@
+name: klor_module
 build:
-  settings:
-    boards: [ "." ]
-    shields: [ "." ]
+  board_root: .
+  shield_root: .
