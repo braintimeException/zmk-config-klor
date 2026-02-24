@@ -1,2 +1,6 @@
 build:
-  cmake: .
+  settings:
+    boards:
+      - boards
+    shields:
+      - shields
