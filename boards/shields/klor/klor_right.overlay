@@ -61,9 +61,5 @@
         compatible = "zmk,input-listener-ps2"; /* */
         /* Link the driver to the real hardware UART instead of the undefined &uart_ps2 */
         device = <&uart0>; 
-        
-        /* Optional: Define specific tracking parameters */
-        tp-sensitivity = <135>; /* */
-        tp-neg-inertia = <6>; /* */
     };
 };
