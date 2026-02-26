@@ -5,6 +5,7 @@
  */
 
 #include "klor.dtsi"
+#include <dt-bindings/zmk/pointing.h> /* Enables ZMK pointing behavior */
 
 &default_transform {
 	col-offset = <6>;
@@ -23,4 +24,36 @@
 
 &right_encoder {
 	status = "disabled";
+};
+
+/* --- TRACKPOINT HARDWARE CONFIG --- */
+
+&pinctrl {
+    uart_ps2_default: uart_ps2_default {
+        group1 {
+            /* Map to your physical nice!nano pins (P0.09 and P0.10) */
+            psels = <NRF_PSEL(UART_TX, 0, 10)>, /* CLK */
+                    <NRF_PSEL(UART_RX, 0, 9)>;  /* DATA */
+            bias-pull-up; /* */
+        };
+    };
+};
+
+/* Enable the hardware UART and assign the pins we just defined */
+&uart0 {
+    status = "okay";
+    pinctrl-0 = <&uart_ps2_default>;
+    pinctrl-names = "default";
+};
+
+/ {
+    trackpoint: trackpoint {
+        compatible = "zmk,input-listener-ps2"; /* */
+        /* Link the driver to the real hardware UART instead of the undefined &uart_ps2 */
+        device = <&uart0>; 
+        
+        /* Optional: Define specific tracking parameters */
+        tp-sensitivity = <135>; /* */
+        tp-neg-inertia = <6>; /* */
+    };
 };
