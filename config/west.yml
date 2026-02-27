@@ -12,6 +12,6 @@ manifest:
     - name: zmk-config-trackpoint
       repo-path: kb_zmk_ps2_mouse_trackpoint_driver-zmk_config
       remote: filippor
-      revision: 4.1
+      revision: "4.1"
   self:
     path: config/
