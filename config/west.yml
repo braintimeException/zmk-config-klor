@@ -2,16 +2,22 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: filippor
-      url-base: https://github.com/filippor
+    - name: badjeff
+      url-base: https://github.com/badjeff
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-config-trackpoint
-      repo-path: kb_zmk_ps2_mouse_trackpoint_driver
-      remote: filippor
-      revision: "4.1"
+
+    # 1.  PS/2 Hardware Driver
+    - name: kb_zmk_ps2_mouse_trackpoint_driver
+      remote: badjeff
+      revision: main
+
+    # 2. Rate Limiter (crucial for stability over BLE)
+    - name: zmk-input-processor-report-rate-limit
+      remote: badjeff
+      revision: main
   self:
     path: config/
