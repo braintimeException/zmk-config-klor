@@ -57,9 +57,18 @@
 };
 
 / {
-    trackpoint: trackpoint {
-        compatible = "zmk,input-listener-ps2"; /* */
-        /* Link the driver to the real hardware UART instead of the undefined &uart_ps2 */
-        device = <&uart0>; 
+    /* 1. The Hardware Driver Node */
+    trackpoint_device: trackpoint_device {
+        compatible = "zmk,input-listener-ps2";
+        device = <&uart0>;
+        /* Optional: sensitivity tuning (range 0-255) */
+        /* sensitivity = <135>; */
+    };
+
+    /* 2. The Input Listener Node (Required for ZMK Pointing) */
+    /* This node bridges the driver to the ZMK HID reporting system */
+    trackpoint_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackpoint_device>;
     };
 };
