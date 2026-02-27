@@ -10,7 +10,7 @@ manifest:
       revision: main
       import: app/west.yml
     - name: zmk-config-trackpoint
-      repo-path: kb_zmk_ps2_mouse_trackpoint_driver-zmk_config
+      repo-path: kb_zmk_ps2_mouse_trackpoint_driver
       remote: filippor
       revision: "4.1"
   self:
