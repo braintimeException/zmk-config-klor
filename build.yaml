@@ -18,6 +18,7 @@ include:
     artifact-name: klor_left_yubitsume
   - board: nice_nano//zmk
     shield: klor_right yubitsume
+    snippet: zmk-usb-logging
     artifact-name: klor_right_yubitsume
 #  - board: nice_nano//zmk
 #    shield: settings_reset
