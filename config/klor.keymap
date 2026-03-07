@@ -23,11 +23,12 @@
 
 #define PRORAK 0
 #define FNUM   1
-#define NAVIG  2
-#define GAMING 3
-#define GRAISE 4
-#define GLOWER 5
-#define ADJUST 6
+#define FSYM   2
+#define NAVIG  3
+#define GAMING 4
+#define GRAISE 5
+#define GLOWER 6
+#define ADJUST 7
 
 
 /* key positions
