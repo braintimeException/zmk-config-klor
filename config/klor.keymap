@@ -58,9 +58,14 @@
      combos {
             compatible = "zmk,combos";
             combo_adjust {
-                timeout-ms = <50>;
-                key-positions = <34 36>; // ENTER + BSPC
-                bindings = <&mo ADJUST>;
+              timeout-ms = <50>;
+              key-positions = <34 36>; // ENTER + BSPC
+              bindings = <&mo ADJUST>;
+            };
+            combo_caps_word {
+              timeout-ms = <50>;
+              key-positions = <30 37>; // LGUI (Bottom Left Thumb) + RGUI (Bottom Right Thumb)
+              bindings = <&caps_word>;
             };
             combo_lshift {
               timeout-ms = <70>;
@@ -173,7 +178,7 @@ label= "PRORAK"                                                 ;
               &kp SEMI  &kp COMMA &kp DOT   &kp P     &kp Y                          &kp F     &kp G     &kp C     &kp R     &kp L
               &kp A     &kp O     &kp E     &kp U     &kp I                          &kp D     &kp H     &kp T     &kp N     &kp S
               &kp SQT   &kp Q     &kp J     &kp K     &kp X                          &kp B     &kp M     &kp W     &kp V     &kp Z
-                                            &kp LGUI  &kp SPACE &mo FNUM  &kp LSHFT  &kp RET   &mo NAVIG &kp BSPC &kp RGUI
+                                            &kp LGUI  &kp SPACE &mo FNUM  &kp TAB  &kp RET   &mo NAVIG &kp BSPC &kp RGUI
                         >;
                 };
 
