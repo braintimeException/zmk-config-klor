@@ -44,14 +44,35 @@
 
 / {
     behaviors {
-        hm: homerow_mods {
+        //hm: homerow_mods {
+        //    compatible = "zmk,behavior-hold-tap";
+        //    label = "HOMEROW_MODS";
+        //    #binding-cells = <2>;
+        //    tapping-term-ms = <150>;
+        //    quick_tap_ms = <0>;
+        //    flavor = "tap-preferred";
+        //    bindings = <&kp>, <&kp>;
+        //};
+        // Bottom Row Mods
+        hm: bottomrow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "BOTTOMROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick_tap_ms = <0>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>; // Allows spamming bottom row letters if needed
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+
+        // Custom Layer-Tap to allow Spamming the ENTER key
+        lt_spam: layer_tap_spam {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_SPAM";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>; // This is the magic spam enabler
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
         };
 
     };
@@ -175,11 +196,11 @@ label= "PRORAK"                                                 ;
                                   │  LGUI   │  SPACE  │  FNUM   │ TAB/SYM ││  ENTER  │  NAVIG  │  BSPCE  │  RGUI   │
                                   └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
  bindings = <
- //|          ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷
-              &kp SEMI  &kp COMMA &kp DOT   &kp P     &kp Y                          &kp F     &kp G     &kp C     &kp R     &kp L
-              &kp A     &kp O     &kp E     &kp U     &kp I                          &kp D     &kp H     &kp T     &kp N     &kp S
-              &kp SQT   &kp Q     &kp J     &kp K     &kp X                          &kp B     &kp M     &kp W     &kp V     &kp Z
-                                            &kp LGUI  &kp SPACE &mo FNUM  &lt FSYM TAB  &kp RET   &mo NAVIG &kp BSPC &kp RGUI
+ //|          ╷         ╷           ╷           ╷           ╷         ╷         ╷╷          ╷         ╷           ╷           ╷          ╷
+              &kp SEMI  &kp COMMA   &kp DOT     &kp P       &kp Y                           &kp F     &kp G       &kp C       &kp R      &kp L
+              &kp A     &kp O       &kp E       &kp U       &kp I                           &kp D     &kp H       &kp T       &kp N      &kp S
+              &kp SQT   &hm LALT Q  &hm LCTRL J &hm LSHFT K &kp X                           &kp B     &hm RSHFT M &hm RCTRL W &hm RALT V &kp Z
+                                    &kp LGUI    &kp SPACE   &mo FNUM  &lt FSYM TAB  &kp RET &mo NAVIG &kp BSPC    &kp RGUI
                         >;
                 };
 
