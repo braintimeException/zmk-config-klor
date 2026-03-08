@@ -15,9 +15,9 @@
 include:
   - board: nice_nano
     shield: klor_left
-    artifact_name: klor_left_stationary
+    artifact-name: klor_left_stationary
   - board: nice_nano
     shield: klor_right
-    artifact_name: klor_right_stationary
+    artifact-name: klor_right_stationary
   - board: nice_nano
     shield: settings_reset
