@@ -19,5 +19,5 @@ include:
   - board: nice_nano//zmk
     shield: klor_right
     artifact-name: klor_right_stationary
-  - board: nice_nano//zmk
+  - board: nice_nano
     shield: settings_reset
