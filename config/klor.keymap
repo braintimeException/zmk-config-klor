@@ -190,7 +190,7 @@ label= "PRORAK"                                                 ;
  //|          ╷         ╷           ╷           ╷           ╷         ╷           ╷╷         ╷         ╷           ╷           ╷          ╷         ╷
               &kp SEMI  &kp COMMA   &kp DOT     &kp P       &kp Y                            &kp F     &kp G       &kp C       &kp R      &kp L
     &trans    &kp A     &hm LALT O  &hm LCTRL E &hm LSHFT U &kp I                            &kp D     &hm RSHFT H &hm RCTRL T &hm RALT N &kp S      &trans
-    &trans    &kp SQT   &hm LALT Q  &hm LCTRL J &hm LSHFT K &kp X                            &kp B     &hm RSHFT M &hm RCTRL W &hm RALT V &kp Z      &trans
+    &trans    &kp SQT   &hm LALT Q  &hm LCTRL J &hm LSHFT K &kp X     &trans       &trans    &kp B     &hm RSHFT M &hm RCTRL W &hm RALT V &kp Z      &trans
                                     &kp LGUI    &kp SPACE   &mo FNUM  &lt FSYM TAB &kp RET   &mo NAVIG &kp BSPC    &kp RGUI
  //|          ╷         ╷           ╷           ╷           ╷         ╷           ╷╷         ╷         ╷           ╷           ╷          ╷         ╷
                         >;
@@ -242,7 +242,7 @@ label= "FSYM"                                                   ;
  //|          ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                      &kp CARET &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR
     &trans    &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &kp PLUS  &trans
-    &trans    &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &trans                         &trans    &trans    &trans    &trans    &kp UNDER &trans
+    &trans    &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &trans    &trans     &trans    &trans    &trans    &trans    &trans    &kp UNDER &trans
                                   &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans
                         >;
                 };
