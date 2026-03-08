@@ -13,11 +13,11 @@
 #
 
 include:
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: klor_left
     artifact-name: klor_left_stationary
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: klor_right
     artifact-name: klor_right_stationary
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: settings_reset
