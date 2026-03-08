@@ -52,6 +52,7 @@
             tapping-term-ms = <170>;
             require-prior-idle-ms = <150>; // prevents firing during fast typing rolls
             quick-tap-ms = <100>; // tap-hold to spam keys, default 0
+            quick-release; // Release after a button is pressed (to avoid rolling CAPS)
             hold-trigger-key-positions = <5 6 7 8 9 16 17 18 19 20 21 30 31 32 33 34 35 40 41 42 43   24 25 26 36>;
             // flavor = "tap-preferred";
             flavor = "balanced"; // apply modifiers immediately when a key on the other half is pressed
@@ -65,11 +66,20 @@
             tapping-term-ms = <170>;
             require-prior-idle-ms = <150>; // prevents firing during fast typing rolls
             quick-tap-ms = <100>; // tap-hold to spam keys, default 0
+            quick-release; // Release after a button is pressed (to avoid rolling CAPS)
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 15 22 23 24 25 26 27 36 37 38 39   31 32 33 43>;
             // flavor = "tap-preferred";
             flavor = "balanced"; // apply modifiers immediately when a key the other half is pressed
             bindings = <&kp>, <&kp>;
 
+        };
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <500>;
+            quick-release;     // This is the magic line
+            ignore-modifiers;  // Recommended for shift
         };
 
         // Custom Layer-Tap to allow Spamming the ENTER key
@@ -89,12 +99,12 @@
             compatible = "zmk,combos";
             combo_adjust {
               timeout-ms = <50>;
-              key-positions = <34 36>; // ENTER + BSPC
+              key-positions = <40 42>; // ENTER + BSPC
               bindings = <&mo ADJUST>;
             };
             combo_caps_word {
               timeout-ms = <50>;
-              key-positions = <36 43>; // LGUI (Bottom Left Thumb) + RGUI (Bottom Right Thumb)
+              key-positions = <36 43>; // LSHFT (Left most Thumb) + RSHFT (Right most Thumb)
               bindings = <&caps_word>;
             };
           //combo_lshift {
@@ -208,7 +218,7 @@ label= "PRORAK"                                                 ;
               &kp SEMI  &kp COMMA   &kp DOT      &kp P       &kp Y                            &kp F     &kp G       &kp C        &kp R       &kp L
     &trans    &kp A     &kp O       &kp E        &kp U       &kp I                            &kp D     &kp H       &kp T        &kp N       &kp S      &trans
     &trans    &kp SQT   &hml LALT Q &hml LCTRL J &hml LGUI K &kp X     &trans       &trans    &kp B     &hmr RGUI M &hmr RCTRL W &hmr RALT V &kp Z      &trans
-                                    &sk LSHFT    &kp SPACE   &mo FNUM  &lt FSYM TAB &kp RET   &mo NAVIG &kp BSPC    &sk RSHFT
+                                    &skq LSHFT   &kp SPACE   &mo FNUM  &lt FSYM TAB &kp RET   &mo NAVIG &kp BSPC    &skq RSHFT
  //|          ╷         ╷           ╷            ╷           ╷         ╷           ╷╷         ╷         ╷           ╷            ╷           ╷         ╷
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
