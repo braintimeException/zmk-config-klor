@@ -264,7 +264,7 @@ label= "NAVIG"                                                  ;
 /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
              │         │         │         │         │   ESC   │                    │    ~    │   HOME  │   UP    │  END    │  PG UP  │
              ├─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┤
-             │         │         │         │         │    [    │                    │    }    │   LEFT  │  DOWN   │  RIGHT  │ PG DOWN │
+             │         │ Mouse M │ Mouse R │ Mouse L │    [    │                    │    }    │   LEFT  │  DOWN   │  RIGHT  │ PG DOWN │
              ├─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┤
              │         │         │         │         │    /    │                    │    |    │         │         │         │         │
              └─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┘
@@ -273,7 +273,7 @@ label= "NAVIG"                                                  ;
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               &trans    &trans    &trans    &trans    &kp ESC                        &kp TILDE &kp HOME  &kp UP    &kp END   &kp PG_UP     
-              &kp RA(A) &kp RA(S) &trans    &trans    &kp LBKT                       &kp RBRC  &kp LEFT  &kp DOWN  &kp RIGHT &kp PG_DN
+              &kp RA(A) &mkp MCLK &mkp RCLK &mkp LCLK &kp LBKT                       &kp RBRC  &kp LEFT  &kp DOWN  &kp RIGHT &kp PG_DN
               &trans    &trans    &trans    &trans    &kp FSLH                       &kp PIPE  &trans    &trans    &trans    &trans
                                   &trans    &kp TAB   &trans    &mo ADJUST &trans    &kp INSERT &trans    &trans
                         >;
