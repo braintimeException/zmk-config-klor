@@ -105,6 +105,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <100>;
             flavor = "balanced"; // allows fast rolls
+            permissive-hold;
             bindings = <&mo>, <&kp>;
         };
 
