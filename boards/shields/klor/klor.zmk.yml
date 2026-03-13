@@ -4,11 +4,11 @@ name: KLOR
 type: shield
 url: https://github.com/GEIGEIGEIST/KLOR
 requires: [pro_micro]
-exposes: [i2c_oled]
+#exposes: [i2c_oled]
 features:
   - keys
-  - display
-  - encoder
+#  - display
+#  - encoder
 siblings:
   - klor_left
   - klor_right

@@ -18,6 +18,7 @@
 		label = "KSCAN";
 
 		diode-direction = "col2row";		
+                wakeup-source;
 	};
 
 	left_encoder: encoder_left {
