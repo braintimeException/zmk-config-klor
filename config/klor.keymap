@@ -45,24 +45,66 @@
 
 / {
     behaviors {
-        hm: bottomrow_mods {
+        hml: left_hand_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "BOTTOMROW_MODS";
+            label = "BOTTOMROW_MODS_LEFT";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <200>; // tap-hold to spam keys, default 0
-            flavor = "tap-preferred";
+            tapping-term-ms = <170>;
+            require-prior-idle-ms = <110>; // prevents firing during fast typing rolls
+            quick-tap-ms = <100>; // tap-hold to spam keys, default 0
+            //  the whitelisted key will trigger the mod key immediately
+            hold-trigger-key-positions = <
+                                          5  6  7  8  9
+                                         15 16 17 18 19
+                                         25 26 27 28 29
+                                      34 35    37
+
+                    21 22 23
+                       30    32 33
+            >;
+            // flavor = "tap-preferred";
+            flavor = "balanced"; // apply modifiers immediately when a key on the other half is pressed
             bindings = <&kp>, <&kp>;
+
+        };
+        hmr: right_hand_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BOTTOMROW_MODS_RIGHT";
+            #binding-cells = <2>;
+            tapping-term-ms = <170>;
+            require-prior-idle-ms = <110>; // prevents firing during fast typing rolls
+            quick-tap-ms = <100>; // tap-hold to spam keys, default 0
+            //  the whitelisted key will trigger the mod key immediately
+            hold-trigger-key-positions = <
+                                            26 27 28
+                                      34 35    37
+
+                  0  1  2  3  4
+                 10 11 12 13 14
+                 20 21 22 23 24
+                       30    32 33
+            >;
+            // flavor = "tap-preferred";
+            flavor = "balanced"; // apply modifiers immediately when a key the other half is pressed
+            bindings = <&kp>, <&kp>;
+
+        };
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <500>;
+            quick-release; // Release after a button is pressed (to avoid rolling CAPS)
+            ignore-modifiers;  // Recommended for shift
         };
 
-        // Custom Layer-Tap to allow Spamming the ENTER key
-        lt_spam: layer_tap_spam {
+        lt_tmb: layer_tap_thumb {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_SPAM";
+            label = "LAYER_TAP_THUMB";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>; // tap-hold to spam keys
-            flavor = "tap-preferred";
+            quick-tap-ms = <100>;
+            flavor = "hold-preferred"; // allows fast rolls
             bindings = <&mo>, <&kp>;
         };
 
@@ -77,92 +119,8 @@
             };
             combo_caps_word {
               timeout-ms = <50>;
-              key-positions = <30 37>; // LGUI (Bottom Left Thumb) + RGUI (Bottom Right Thumb)
+              key-positions = <30 37>; // LSHFT (Left most Thumb) + RSHFT (Right most Thumb)
               bindings = <&caps_word>;
-            };
-            combo_lshift {
-              timeout-ms = <70>;
-              key-positions = <20 21>;
-              bindings = <&kp LSHFT>;
-              layers = <PRORAK FNUM NAVIG>;
-            };
-            combo_rshift {
-              timeout-ms = <70>;
-              key-positions = <28 29>;
-              bindings = <&kp RSHFT>;
-              layers = <PRORAK NAVIG>;
-            };
-            combo_lcontrol {
-              timeout-ms = <70>;
-              key-positions = <21 22>;
-              bindings = <&kp LCTRL>;
-              layers = <PRORAK FNUM NAVIG>;
-            };
-            combo_rcontrol {
-              timeout-ms = <70>;
-              key-positions = <27 28>;
-              bindings = <&kp RCTRL>;
-              layers = <PRORAK NAVIG>;
-            };
-            combo_lalt {
-              timeout-ms = <50>;
-              key-positions = <22 23>;
-              bindings = <&kp LALT>;
-              layers = <PRORAK FNUM NAVIG>;
-            };
-            combo_ralt {
-              timeout-ms = <50>;
-              key-positions = <26 27>;
-              bindings = <&kp RALT>;
-              layers = <PRORAK NAVIG>;
-            };
-            combo_lshift_lctl {
-              timeout-ms = <50>;
-              key-positions = <20 21 22>;
-              bindings = <&kp LS(LCTRL)>;
-              layers = <PRORAK FNUM NAVIG>;
-            };
-            combo_rshift_rctl {
-              timeout-ms = <50>;
-              key-positions = <27 28 29>;
-              bindings = <&kp RS(RCTL)>;
-              layers = <PRORAK NAVIG>;
-            };
-            combo_lshift_lalt {
-              timeout-ms = <50>;
-              key-positions = <20 21 23>;
-              bindings = <&kp LS(LALT)>;
-              layers = <PRORAK FNUM NAVIG>;
-            };
-            combo_rshift_ralt {
-              timeout-ms = <50>;
-              key-positions = <26 28 29>;
-              bindings = <&kp RS(RALT)>;
-              layers = <PRORAK NAVIG>;
-            };
-            combo_lctl_lalt {
-              timeout-ms = <50>;
-              key-positions = <21 22 23>;
-              bindings = <&kp LC(LALT)>;
-              layers = <PRORAK FNUM NAVIG>;
-            };
-            combo_rctl_ralt {
-              timeout-ms = <50>;
-              key-positions = <26 27 28>;
-              bindings = <&kp RC(RALT)>;
-              layers = <PRORAK NAVIG>;
-            };
-            combo_lshift_lctl_lalt {
-              timeout-ms = <50>;
-              key-positions = <20 21 22 23>;
-              bindings = <&kp LS(LC(LALT))>;
-              layers = <PRORAK FNUM NAVIG>;
-            };
-            combo_rshift_rctl_ralt {
-              timeout-ms = <50>;
-              key-positions = <26 27 28 29>;
-              bindings = <&kp RS(RC(RALT))>;
-              layers = <PRORAK NAVIG>;
             };
     };
 
@@ -182,18 +140,19 @@ label= "PRORAK"                                                 ;
               ├─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┤
               │    A    │    O    │    E    │    U    │    I    │                    │    D    │    H    │    T    │    N    │    S    │
               ├─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┤
-              │    "    │    Q    │    J    │    K    │    X    │                    │    B    │    M    │    W    │    V    │    Z    │
+              │    "    │ Q/LALT  │ J/LCTRL │ K/LGUI  │    X    │                    │    B    │ M/RGUI  │ W/RCTRL │ V/RALT  │    Z    │
               └─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┘
-                                  │  LGUI   │  SPACE  │  FNUM   │ TAB/SYM ││  ENTER  │  NAVIG  │  BSPCE  │  RGUI   │
+                                  │  LSHFT  │  SPACE  │  FNUM   │ TAB/SYM ││  ENTER  │  NAVIG  │  BSPCE  │  RSHFT  │
                                   └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
  bindings = <
- //|          ╷         ╷           ╷           ╷           ╷         ╷         ╷╷          ╷         ╷           ╷           ╷          ╷
-              &kp SEMI  &kp COMMA   &kp DOT     &kp P       &kp Y                           &kp F     &kp G       &kp C       &kp R      &kp L
-              &kp A     &hm LALT O  &hm LCTRL E &hm LSHFT U &kp I                           &kp D     &hm RSHFT H &hm RCTRL T &hm RALT N &kp S
-              &kp SQT   &hm LALT Q  &hm LCTRL J &hm LSHFT K &kp X                           &kp B     &hm RSHFT M &hm RCTRL W &hm RALT V &kp Z
-                                    &kp LGUI    &kp SPACE   &mo FNUM  &lt FSYM TAB  &kp RET &mo NAVIG &kp BSPC    &kp RGUI
+ //|          ╷         ╷           ╷            ╷           ╷         ╷                ╷╷          ╷         ╷           ╷            ╷           ╷
+              &kp SEMI  &kp COMMA   &kp DOT      &kp P       &kp Y                                  &kp F     &kp G       &kp C        &kp R       &kp L
+              &kp A     &kp O       &kp E        &kp U       &kp I                                  &kp D     &kp H       &kp T        &kp N       &kp S
+              &kp SQT   &hml LALT Q &hml LCTRL J &hml LGUI K &kp X                                  &kp B     &hmr RGUI M &hmr RCTRL W &hmr RALT V &kp Z
+                                    &skq LSHFT   &kp SPACE   &mo FNUM  &lt_tmb FSYM TAB  &kp RET    &mo NAVIG &kp BSPC    &skq RSHFT
                         >;
                 };
+//|          ╷          ╷           ╷            ╷           ╷         ╷                ╷╷          ╷         ╷           ╷            ╷           ╷
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
