@@ -295,7 +295,7 @@ label= "GLOWER"                                                 ;
 /*            ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
               │    F1   │    F2   │    F3   │    F4   │   ESC   │                    │    Y    │    U    │    I    │    O    │    P    │   
     ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-    │   ESC   │    F5   │    F6   │    F7   │    F8   │   TAB   │                    │    H    │    J    │    K    │    L    │    ;    │   XXX   │
+    │   GRV   │    F5   │    F6   │    F7   │    F8   │   TAB   │                    │    H    │    J    │    K    │    L    │    ;    │   XXX   │
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     │   XXX   │    N    │    M    │   LALT  │  LGUI   │    I    ││  MUTE  ││PLY/PSE ││    N    │    M    │    ,    │    .    │    /    │   XXX   │
     └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
@@ -304,7 +304,7 @@ label= "GLOWER"                                                 ;
  bindings = <
  //|          ╷         ╷         ╷         ╷          ╷         ╷          ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               &kp F1    &kp F2    &kp F3    &kp F4     &kp ESC                         &kp Y     &kp U     &kp I     &kp O     &kp P
-    &kp ESC   &kp F5    &kp F6    &kp F7    &kp F8     &kp TAB                         &kp H     &kp J     &kp K     &kp L     &kp SEMI  &trans
+    &kp GRAVE &kp F5    &kp F6    &kp F7    &kp F8     &kp TAB                         &kp H     &kp J     &kp K     &kp L     &kp SEMI  &trans
     &trans    &kp N     &kp M     &kp LALT  &kp LGUI   &kp I     &trans     &trans     &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &trans
                                             &mo GRAISE &kp SPACE &mo GLOWER &kp LCTRL  &kp RET   &mo NAVIG &kp BSPC &kp RGUI
                         >;
