@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: braintimeException
+      url-base: https://github.com/braintimeException
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-usb-midi
+      remote: braintimeException
+      revision: main
   self:
     path: config
