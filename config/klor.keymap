@@ -32,8 +32,12 @@
 #define GRAISE 5
 #define GLOWER 6
 #define MUSIC  7
-#define MLOWER 8
-#define ADJUST 9
+#define MMINOR 8
+#define MSEVEN 9
+#define MOCTUP 10
+#define MOCTDN 11
+#define MLOWER 12
+#define ADJUST 13
 
 
 /* key positions
@@ -129,6 +133,7 @@
     };
 
     macros {
+        // --- 12 Major Chords ---
         chord_c: chord_c {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -137,28 +142,12 @@
                      , <&macro_release &midi NOTE_C_4 &midi NOTE_E_4 &midi NOTE_G_4>;
         };
 
-        chord_g: chord_g {
+        chord_cs: chord_cs {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &midi NOTE_G_4 &midi NOTE_B_4 &midi NOTE_D_5>
+            bindings = <&macro_press &midi NOTE_Cs_4 &midi NOTE_F_4 &midi NOTE_Gs_4>
                      , <&macro_pause_for_release>
-                     , <&macro_release &midi NOTE_G_4 &midi NOTE_B_4 &midi NOTE_D_5>;
-        };
-
-        chord_am: chord_am {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &midi NOTE_A_4 &midi NOTE_C_5 &midi NOTE_E_5>
-                     , <&macro_pause_for_release>
-                     , <&macro_release &midi NOTE_A_4 &midi NOTE_C_5 &midi NOTE_E_5>;
-        };
-
-        chord_f: chord_f {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &midi NOTE_F_4 &midi NOTE_A_4 &midi NOTE_C_5>
-                     , <&macro_pause_for_release>
-                     , <&macro_release &midi NOTE_F_4 &midi NOTE_A_4 &midi NOTE_C_5>;
+                     , <&macro_release &midi NOTE_Cs_4 &midi NOTE_F_4 &midi NOTE_Gs_4>;
         };
 
         chord_d: chord_d {
@@ -169,20 +158,12 @@
                      , <&macro_release &midi NOTE_D_4 &midi NOTE_Fs_4 &midi NOTE_A_4>;
         };
 
-        chord_dm: chord_dm {
+        chord_eb: chord_eb {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &midi NOTE_D_4 &midi NOTE_F_4 &midi NOTE_A_4>
+            bindings = <&macro_press &midi NOTE_Eb_4 &midi NOTE_G_4 &midi NOTE_Bb_4>
                      , <&macro_pause_for_release>
-                     , <&macro_release &midi NOTE_D_4 &midi NOTE_F_4 &midi NOTE_A_4>;
-        };
-
-        chord_em: chord_em {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &midi NOTE_E_4 &midi NOTE_G_4 &midi NOTE_B_4>
-                     , <&macro_pause_for_release>
-                     , <&macro_release &midi NOTE_E_4 &midi NOTE_G_4 &midi NOTE_B_4>;
+                     , <&macro_release &midi NOTE_Eb_4 &midi NOTE_G_4 &midi NOTE_Bb_4>;
         };
 
         chord_e: chord_e {
@@ -193,6 +174,216 @@
                      , <&macro_release &midi NOTE_E_4 &midi NOTE_Gs_4 &midi NOTE_B_4>;
         };
 
+        chord_f: chord_f {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_F_4 &midi NOTE_A_4 &midi NOTE_C_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_F_4 &midi NOTE_A_4 &midi NOTE_C_5>;
+        };
+
+        chord_fs: chord_fs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_Fs_4 &midi NOTE_Bb_4 &midi NOTE_Cs_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_Fs_4 &midi NOTE_Bb_4 &midi NOTE_Cs_5>;
+        };
+
+        chord_g: chord_g {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_G_4 &midi NOTE_B_4 &midi NOTE_D_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_G_4 &midi NOTE_B_4 &midi NOTE_D_5>;
+        };
+
+        chord_gs: chord_gs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_Gs_4 &midi NOTE_C_5 &midi NOTE_Eb_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_Gs_4 &midi NOTE_C_5 &midi NOTE_Eb_5>;
+        };
+
+        chord_a: chord_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_A_4 &midi NOTE_Cs_5 &midi NOTE_E_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_A_4 &midi NOTE_Cs_5 &midi NOTE_E_5>;
+        };
+
+        chord_bb: chord_bb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_Bb_4 &midi NOTE_D_5 &midi NOTE_F_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_Bb_4 &midi NOTE_D_5 &midi NOTE_F_5>;
+        };
+
+        chord_b: chord_b {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_B_4 &midi NOTE_Ds_5 &midi NOTE_Fs_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_B_4 &midi NOTE_Ds_5 &midi NOTE_Fs_5>;
+        };
+
+        // --- 12 Minor Chords ---
+        chord_cm: chord_cm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_C_4 &midi NOTE_Eb_4 &midi NOTE_G_4>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_C_4 &midi NOTE_Eb_4 &midi NOTE_G_4>;
+        };
+
+        chord_csm: chord_csm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_Cs_4 &midi NOTE_E_4 &midi NOTE_Gs_4>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_Cs_4 &midi NOTE_E_4 &midi NOTE_Gs_4>;
+        };
+
+        chord_dm: chord_dm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_D_4 &midi NOTE_F_4 &midi NOTE_A_4>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_D_4 &midi NOTE_F_4 &midi NOTE_A_4>;
+        };
+
+        chord_ebm: chord_ebm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_Eb_4 &midi NOTE_Fs_4 &midi NOTE_Bb_4>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_Eb_4 &midi NOTE_Fs_4 &midi NOTE_Bb_4>;
+        };
+
+        chord_em: chord_em {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_E_4 &midi NOTE_G_4 &midi NOTE_B_4>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_E_4 &midi NOTE_G_4 &midi NOTE_B_4>;
+        };
+
+        chord_fm: chord_fm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_F_4 &midi NOTE_Gs_4 &midi NOTE_C_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_F_4 &midi NOTE_Gs_4 &midi NOTE_C_5>;
+        };
+
+        chord_fsm: chord_fsm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_Fs_4 &midi NOTE_A_4 &midi NOTE_Cs_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_Fs_4 &midi NOTE_A_4 &midi NOTE_Cs_5>;
+        };
+
+        chord_gm: chord_gm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_G_4 &midi NOTE_Bb_4 &midi NOTE_D_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_G_4 &midi NOTE_Bb_4 &midi NOTE_D_5>;
+        };
+
+        chord_gsm: chord_gsm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_Gs_4 &midi NOTE_B_4 &midi NOTE_Eb_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_Gs_4 &midi NOTE_B_4 &midi NOTE_Eb_5>;
+        };
+
+        chord_am: chord_am {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_A_4 &midi NOTE_C_5 &midi NOTE_E_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_A_4 &midi NOTE_C_5 &midi NOTE_E_5>;
+        };
+
+        chord_bbm: chord_bbm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_Bb_4 &midi NOTE_Cs_5 &midi NOTE_F_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_Bb_4 &midi NOTE_Cs_5 &midi NOTE_F_5>;
+        };
+
+        chord_bm: chord_bm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_B_4 &midi NOTE_D_5 &midi NOTE_Fs_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_B_4 &midi NOTE_D_5 &midi NOTE_Fs_5>;
+        };
+
+        // --- 12 Dominant 7th Chords ---
+        chord_c7: chord_c7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_C_4 &midi NOTE_E_4 &midi NOTE_G_4 &midi NOTE_Bb_4>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_C_4 &midi NOTE_E_4 &midi NOTE_G_4 &midi NOTE_Bb_4>;
+        };
+
+        chord_cs7: chord_cs7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_Cs_4 &midi NOTE_F_4 &midi NOTE_Gs_4 &midi NOTE_B_4>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_Cs_4 &midi NOTE_F_4 &midi NOTE_Gs_4 &midi NOTE_B_4>;
+        };
+
+        chord_d7: chord_d7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_D_4 &midi NOTE_Fs_4 &midi NOTE_A_4 &midi NOTE_C_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_D_4 &midi NOTE_Fs_4 &midi NOTE_A_4 &midi NOTE_C_5>;
+        };
+
+        chord_eb7: chord_eb7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_Eb_4 &midi NOTE_G_4 &midi NOTE_Bb_4 &midi NOTE_Cs_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_Eb_4 &midi NOTE_G_4 &midi NOTE_Bb_4 &midi NOTE_Cs_5>;
+        };
+
+        chord_e7: chord_e7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_E_4 &midi NOTE_Gs_4 &midi NOTE_B_4 &midi NOTE_D_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_E_4 &midi NOTE_Gs_4 &midi NOTE_B_4 &midi NOTE_D_5>;
+        };
+
+        chord_f7: chord_f7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_F_4 &midi NOTE_A_4 &midi NOTE_C_5 &midi NOTE_Eb_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_F_4 &midi NOTE_A_4 &midi NOTE_C_5 &midi NOTE_Eb_5>;
+        };
+
+        chord_fs7: chord_fs7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_Fs_4 &midi NOTE_Bb_4 &midi NOTE_Cs_5 &midi NOTE_E_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_Fs_4 &midi NOTE_Bb_4 &midi NOTE_Cs_5 &midi NOTE_E_5>;
+        };
+
         chord_g7: chord_g7 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -201,12 +392,36 @@
                      , <&macro_release &midi NOTE_G_4 &midi NOTE_B_4 &midi NOTE_D_5 &midi NOTE_F_5>;
         };
 
-        chord_c7: chord_c7 {
+        chord_gs7: chord_gs7 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &midi NOTE_C_4 &midi NOTE_E_4 &midi NOTE_G_4 &midi NOTE_Bb_4>
+            bindings = <&macro_press &midi NOTE_Gs_4 &midi NOTE_C_5 &midi NOTE_Eb_5 &midi NOTE_Fs_5>
                      , <&macro_pause_for_release>
-                     , <&macro_release &midi NOTE_C_4 &midi NOTE_E_4 &midi NOTE_G_4 &midi NOTE_Bb_4>;
+                     , <&macro_release &midi NOTE_Gs_4 &midi NOTE_C_5 &midi NOTE_Eb_5 &midi NOTE_Fs_5>;
+        };
+
+        chord_a7: chord_a7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_A_4 &midi NOTE_Cs_5 &midi NOTE_E_5 &midi NOTE_G_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_A_4 &midi NOTE_Cs_5 &midi NOTE_E_5 &midi NOTE_G_5>;
+        };
+
+        chord_bb7: chord_bb7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_Bb_4 &midi NOTE_D_5 &midi NOTE_F_5 &midi NOTE_Gs_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_Bb_4 &midi NOTE_D_5 &midi NOTE_F_5 &midi NOTE_Gs_5>;
+        };
+
+        chord_b7: chord_b7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &midi NOTE_B_4 &midi NOTE_Ds_5 &midi NOTE_Fs_5 &midi NOTE_A_5>
+                     , <&macro_pause_for_release>
+                     , <&macro_release &midi NOTE_B_4 &midi NOTE_Ds_5 &midi NOTE_Fs_5 &midi NOTE_A_5>;
         };
     };
 
@@ -403,22 +618,90 @@ label= "GLOWER"                                                 ;
 label= "MUSIC"                                                  ;
 //  └───────────────────────────────────────────────────────────┘
 /*            ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-              │  Dm     │  Em     │  E      │  G7     │  C7     │                    │  A#3    │  C#4    │         │  F#3    │  G#3    │
+              │   Bb    │    B    │    C    │   C#    │    D    │                    │   Bb4   │   B4    │   C5    │   C#5   │   D5    │
     ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-    │   XXX   │  C      │  G      │  Am     │  F      │  D      │                    │  C4     │  D4     │  E4     │  F4     │  G4     │   XXX   │
+    │   XXX   │    F    │   F#    │    G    │   G#    │    A    │                    │   F4    │   F#4   │   G4    │   G#4   │   A4    │   XXX   │
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-    │   XXX   │  Bass C │  Bass G │  Bass A │  Bass F │  Bass D ││  MUTE  ││PLY/PSE ││  F3     │  G3     │  A3     │  B3     │  C4     │   XXX   │
+    │   XXX   │    C    │   C#    │    D    │   Eb    │    E    ││  MUTE  ││PLY/PSE ││   C4    │   C#4   │   D4    │   Eb4   │   E4    │   XXX   │
     └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                  │ OCT DN  │ OCT UP  │ MLOWER  │DEEP BASS││  SPACE  │ SUSTAIN │ VEL DN  │ VEL UP  │
+                                  │  MSEVEN │  MMINOR │  MLOWER │  MSEVEN ││  SPACE  │ SUSTAIN │ MOCTUP  │ MOCTDN  │
                                   └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
  bindings = <
- //|          ╷         ╷         ╷         ╷          ╷         ╷          ╷╷         ╷              ╷              ╷              ╷              ╷              ╷
-              &chord_dm &chord_em &chord_e  &chord_g7  &chord_c7                       &midi NOTE_Bb_4 &midi NOTE_Cs_5 &trans         &midi NOTE_Fs_4 &midi NOTE_Gs_4
-    &trans    &chord_c  &chord_g  &chord_am &chord_f   &chord_d                        &midi NOTE_C_5  &midi NOTE_D_5  &midi NOTE_E_5 &midi NOTE_F_5  &midi NOTE_G_5 &trans
-    &trans    &midi NOTE_C_3 &midi NOTE_G_3 &midi NOTE_A_3 &midi NOTE_F_3 &midi NOTE_D_3 &trans &trans &midi NOTE_F_4 &midi NOTE_G_4 &midi NOTE_A_4 &midi NOTE_B_4 &midi NOTE_C_5 &trans
-                                            &trans     &trans    &mo MLOWER &midi NOTE_C_2  &kp SPACE      &midi SUSTAIN  &trans         &trans
-                        >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+ //|          ╷          ╷          ╷          ╷          ╷          ╷          ╷╷         ╷               ╷               ╷               ╷               ╷               ╷
+              &chord_bb  &chord_b   &chord_c   &chord_cs  &chord_d                         &midi NOTE_Bb_4 &midi NOTE_B_4  &midi NOTE_C_5  &midi NOTE_Cs_5 &midi NOTE_D_5
+    &trans    &chord_f   &chord_fs  &chord_g   &chord_gs  &chord_a                         &midi NOTE_F_4  &midi NOTE_Fs_4 &midi NOTE_G_4  &midi NOTE_Gs_4 &midi NOTE_A_4  &trans
+    &trans    &chord_c   &chord_cs  &chord_d   &chord_eb  &chord_e   &trans     &trans     &midi NOTE_C_4  &midi NOTE_Cs_4 &midi NOTE_D_4  &midi NOTE_Eb_4 &midi NOTE_E_4  &trans
+                                    &mo MSEVEN &mo MMINOR &mo MLOWER &mo MSEVEN &kp SPACE  &midi SUSTAIN   &mo MOCTUP      &mo MOCTDN
+            >;
+    sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                mminor_layer {
+//  ┌───────────────────────────────────────────────────────────┐
+label= "MMINOR"                                                 ;
+//  └───────────────────────────────────────────────────────────┘
+ bindings = <
+ //|          ╷           ╷           ╷           ╷           ╷           ╷          ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
+              &chord_bbm  &chord_bm   &chord_cm   &chord_csm  &chord_dm                      &trans    &trans    &trans    &trans    &trans
+    &trans    &chord_fm   &chord_fsm  &chord_gm   &chord_gsm  &chord_am                      &trans    &trans    &trans    &trans    &trans    &trans
+    &trans    &chord_cm   &chord_csm  &chord_dm   &chord_ebm  &chord_em   &trans     &trans  &trans    &trans    &trans    &trans    &trans    &trans
+                                      &trans      &trans      &trans      &trans     &trans  &trans    &trans    &trans
+            >;
+    sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                mseven_layer {
+//  ┌───────────────────────────────────────────────────────────┐
+label= "MSEVEN"                                                 ;
+//  └───────────────────────────────────────────────────────────┘
+ bindings = <
+ //|          ╷           ╷           ╷           ╷           ╷           ╷          ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
+              &chord_bb7  &chord_b7   &chord_c7   &chord_cs7  &chord_d7                      &trans    &trans    &trans    &trans    &trans
+    &trans    &chord_f7   &chord_fs7  &chord_g7   &chord_gs7  &chord_a7                      &trans    &trans    &trans    &trans    &trans    &trans
+    &trans    &chord_c7   &chord_cs7  &chord_d7   &chord_eb7  &chord_e7   &trans     &trans  &trans    &trans    &trans    &trans    &trans    &trans
+                                      &trans      &trans      &trans      &trans     &trans  &trans    &trans    &trans
+            >;
+    sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                moctup_layer {
+//  ┌───────────────────────────────────────────────────────────┐
+label= "MOCTUP"                                                 ;
+//  └───────────────────────────────────────────────────────────┘
+ bindings = <
+ //|          ╷         ╷         ╷         ╷         ╷         ╷          ╷╷         ╷               ╷               ╷               ╷               ╷               ╷
+              &trans    &trans    &trans    &trans    &trans                            &midi NOTE_Bb_5 &midi NOTE_B_5  &midi NOTE_C_6  &midi NOTE_Cs_6 &midi NOTE_D_6
+    &trans    &trans    &trans    &trans    &trans    &trans                            &midi NOTE_F_5  &midi NOTE_Fs_5 &midi NOTE_G_5  &midi NOTE_Gs_5 &midi NOTE_A_5  &trans
+    &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans       &midi NOTE_C_5  &midi NOTE_Cs_5 &midi NOTE_D_5  &midi NOTE_Eb_5 &midi NOTE_E_5  &trans
+                                  &trans    &trans    &trans    &trans     &trans       &trans          &trans          &trans
+            >;
+    sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                moctdn_layer {
+//  ┌───────────────────────────────────────────────────────────┐
+label= "MOCTDN"                                                 ;
+//  └───────────────────────────────────────────────────────────┘
+ bindings = <
+ //|          ╷         ╷         ╷         ╷         ╷         ╷          ╷╷         ╷               ╷               ╷               ╷               ╷               ╷
+              &trans    &trans    &trans    &trans    &trans                            &midi NOTE_Bb_3 &midi NOTE_B_3  &midi NOTE_C_4  &midi NOTE_Cs_4 &midi NOTE_D_4
+    &trans    &trans    &trans    &trans    &trans    &trans                            &midi NOTE_F_3  &midi NOTE_Fs_3 &midi NOTE_G_3  &midi NOTE_Gs_3 &midi NOTE_A_3  &trans
+    &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans       &midi NOTE_C_3  &midi NOTE_Cs_3 &midi NOTE_D_3  &midi NOTE_Eb_3 &midi NOTE_E_3  &trans
+                                  &trans    &trans    &trans    &trans     &trans       &trans          &trans          &trans
+            >;
+    sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -443,8 +726,8 @@ label= "MLOWER"                                                 ;
     &trans    &trans    &trans    &trans    &trans     &trans                                   &trans    &trans    &trans    &trans    &trans    &trans
     &trans    &trans    &trans    &trans    &trans     &trans             &trans     &trans     &kp B     &trans    &trans    &trans    &kp LC(Z) &trans
                                             &trans     &trans             &trans     &trans     &mo ADJUST &trans   &trans    &trans
-                        >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            >;
+    sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
