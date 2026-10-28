@@ -618,19 +618,19 @@ label= "GLOWER"                                                 ;
 label= "MUSIC"                                                  ;
 //  └───────────────────────────────────────────────────────────┘
 /*            ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-              │   Bb    │    B    │    C    │   C#    │    D    │                    │   Bb4   │   B4    │   C5    │   C#5   │   D5    │
+              │    D    │   C#    │    C    │    B    │   Bb    │                    │   Bb4   │   B4    │   C5    │   C#5   │   D5    │
     ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-    │   XXX   │    F    │   F#    │    G    │   G#    │    A    │                    │   F4    │   F#4   │   G4    │   G#4   │   A4    │   XXX   │
+    │   XXX   │    A    │   G#    │    G    │   F#    │    F    │                    │   F4    │   F#4   │   G4    │   G#4   │   A4    │   XXX   │
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-    │   XXX   │    C    │   C#    │    D    │   Eb    │    E    ││  MUTE  ││PLY/PSE ││   C4    │   C#4   │   D4    │   Eb4   │   E4    │   XXX   │
+    │   XXX   │    E    │   Eb    │    D    │   C#    │    C    ││  MUTE  ││PLY/PSE ││   C4    │   C#4   │   D4    │   Eb4   │   E4    │   XXX   │
     └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                   │  MSEVEN │  MMINOR │  MLOWER │  MSEVEN ││  SPACE  │ SUSTAIN │ MOCTUP  │ MOCTDN  │
                                   └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
  bindings = <
  //|          ╷          ╷          ╷          ╷          ╷          ╷          ╷╷         ╷               ╷               ╷               ╷               ╷               ╷
-              &chord_bb  &chord_b   &chord_c   &chord_cs  &chord_d                         &midi NOTE_Bb_4 &midi NOTE_B_4  &midi NOTE_C_5  &midi NOTE_Cs_5 &midi NOTE_D_5
-    &trans    &chord_f   &chord_fs  &chord_g   &chord_gs  &chord_a                         &midi NOTE_F_4  &midi NOTE_Fs_4 &midi NOTE_G_4  &midi NOTE_Gs_4 &midi NOTE_A_4  &trans
-    &trans    &chord_c   &chord_cs  &chord_d   &chord_eb  &chord_e   &trans     &trans     &midi NOTE_C_4  &midi NOTE_Cs_4 &midi NOTE_D_4  &midi NOTE_Eb_4 &midi NOTE_E_4  &trans
+              &chord_d   &chord_cs  &chord_c   &chord_b   &chord_bb                        &midi NOTE_Bb_4 &midi NOTE_B_4  &midi NOTE_C_5  &midi NOTE_Cs_5 &midi NOTE_D_5
+    &trans    &chord_a   &chord_gs  &chord_g   &chord_fs  &chord_f                         &midi NOTE_F_4  &midi NOTE_Fs_4 &midi NOTE_G_4  &midi NOTE_Gs_4 &midi NOTE_A_4  &trans
+    &trans    &chord_e   &chord_eb  &chord_d   &chord_cs  &chord_c   &trans     &trans     &midi NOTE_C_4  &midi NOTE_Cs_4 &midi NOTE_D_4  &midi NOTE_Eb_4 &midi NOTE_E_4  &trans
                                     &mo MSEVEN &mo MMINOR &mo MLOWER &mo MSEVEN &kp SPACE  &midi SUSTAIN   &mo MOCTUP      &mo MOCTDN
             >;
     sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -645,9 +645,9 @@ label= "MMINOR"                                                 ;
 //  └───────────────────────────────────────────────────────────┘
  bindings = <
  //|          ╷           ╷           ╷           ╷           ╷           ╷          ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &chord_bbm  &chord_bm   &chord_cm   &chord_csm  &chord_dm                      &trans    &trans    &trans    &trans    &trans
-    &trans    &chord_fm   &chord_fsm  &chord_gm   &chord_gsm  &chord_am                      &trans    &trans    &trans    &trans    &trans    &trans
-    &trans    &chord_cm   &chord_csm  &chord_dm   &chord_ebm  &chord_em   &trans     &trans  &trans    &trans    &trans    &trans    &trans    &trans
+              &chord_dm   &chord_csm  &chord_cm   &chord_bm   &chord_bbm                     &trans    &trans    &trans    &trans    &trans
+    &trans    &chord_am   &chord_gsm  &chord_gm   &chord_fsm  &chord_fm                      &trans    &trans    &trans    &trans    &trans    &trans
+    &trans    &chord_em   &chord_ebm  &chord_dm   &chord_csm  &chord_cm   &trans     &trans  &trans    &trans    &trans    &trans    &trans    &trans
                                       &trans      &trans      &trans      &trans     &trans  &trans    &trans    &trans
             >;
     sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -662,9 +662,9 @@ label= "MSEVEN"                                                 ;
 //  └───────────────────────────────────────────────────────────┘
  bindings = <
  //|          ╷           ╷           ╷           ╷           ╷           ╷          ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &chord_bb7  &chord_b7   &chord_c7   &chord_cs7  &chord_d7                      &trans    &trans    &trans    &trans    &trans
-    &trans    &chord_f7   &chord_fs7  &chord_g7   &chord_gs7  &chord_a7                      &trans    &trans    &trans    &trans    &trans    &trans
-    &trans    &chord_c7   &chord_cs7  &chord_d7   &chord_eb7  &chord_e7   &trans     &trans  &trans    &trans    &trans    &trans    &trans    &trans
+              &chord_d7   &chord_cs7  &chord_c7   &chord_b7   &chord_bb7                     &trans    &trans    &trans    &trans    &trans
+    &trans    &chord_a7   &chord_gs7  &chord_g7   &chord_fs7  &chord_f7                      &trans    &trans    &trans    &trans    &trans    &trans
+    &trans    &chord_e7   &chord_eb7  &chord_d7   &chord_cs7  &chord_c7   &trans     &trans  &trans    &trans    &trans    &trans    &trans    &trans
                                       &trans      &trans      &trans      &trans     &trans  &trans    &trans    &trans
             >;
     sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
